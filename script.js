@@ -19,7 +19,31 @@ var updateTime = function () {
     $("#time").text(currentTime)
 }
 
+// create timeblocks via bootstrap
+function createTimeblocks () {
+    var timeblockContainer = document.getElementById("#timeblock-container");
+    for (i=0; i<timeslots.length; i++)
+    {
+        console.log("This is timeslot: " + timeslots[i]);
+        var timeblockRow = document.createElement("div");
+        timeblockRow.setAttribute("class", "row");
+        document.getElementById("timeblock-container").appendChild(timeblockRow);
 
+
+        var timeblockHour = document.createElement("div");
+        timeblockHour.setAttribute("class", "col-2");
+        timeblockRow.appendChild(timeblockHour);
+
+        var timeblockMain = document.createElement("div");
+        timeblockMain.setAttribute("class", "col-8");
+        timeblockRow.appendChild(timeblockMain);
+
+        var timeblockLock = document.createElement("div");
+        timeblockLock.setAttribute("class", "col-2");  
+        timeblockRow.appendChild(timeblockLock);
+    }
+}
+createTimeblocks();
 //TODO: timeblocks for 9am-5pm
 
 //TODO: timeblock color-coding based upon time of day
