@@ -32,7 +32,7 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 100px;
   border-top: 1px solid white;;
 }
 
@@ -68,4 +68,12 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.hourColumn {
+  background-color: lightblue;
+  border: solid;
+  text-align: center;
+  height:100px;
+  
 }
