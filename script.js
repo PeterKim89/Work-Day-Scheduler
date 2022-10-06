@@ -1,7 +1,4 @@
-
-var timeslots = ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-
-
+var timeslots = ["#9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
 console.log(moment());
 // trigger function upon page load
@@ -15,9 +12,20 @@ $(document).ready(function () {
 // track current hour:minutes
 // call updateTime upon page refresh to update the time.
 var updateTime = function () {
-    var currentTime = moment().format("h:mm")
-    $("#time").text(currentTime)
+    var currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+    $("#timer").text(currentTime)
 }
+updateTime();
+setInterval(updateTime, 1000);
+
+
+
+
+
+
+
+
+
 
 // create timeblocks via bootstrap
 // function createTimeblocks () {
