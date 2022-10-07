@@ -30,17 +30,23 @@
     </header>
     <div id="timeblock-container" class="container">
       <!-- Timeblocks go here -->
+
+      <!-- bootstrap row container -->
       <div id="9am" class="row time-block">
+        <!-- bootstrap 1/12 column to display a specified hour timeblock -->
         <div class="col-md-1 hour">
           9am
         </div>
+        <!-- bootstrap 10/12 column to display a textarea where users can input any messages or details pertaining to that timeblock -->
         <textarea class="col-md-10 description">
         </textarea>
+        <!-- bootstrap 1/12 column to display a button that will save or lock your description text area -->
         <button class="btn saveBtn col-md-1">
           <i class="fas fa-save"></i>
         </button>
       </div>
 
+      <!-- repeat above block for working hours of 9-5, but changing the hour timeblock respectively -->
       <div id="10am" class="row time-block">
         <div class="col-md-1 hour">
           10am
