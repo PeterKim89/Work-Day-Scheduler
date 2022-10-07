@@ -1,4 +1,5 @@
 # Work-Day-Scheduler
+https://peterkim89.github.io/Work-Day-Scheduler/
 
 ## Introduction
 This scheduler will let you plan out your work day from 9am to 5pm. According to your current local time, the different time blocks will be color coded on whether that time has passed, has yet to come, or it is currently that time block. Any comments, messages, or data that is saved within a time block's description will remain on the page even after reloading the page. 
@@ -50,12 +51,23 @@ function colorCode() {
 ```
 
 ## Usage 
+Upon initial page load, a timer displaying current local time and a series of rows ranging from 9am to 5pm should appear, segmented into 3 columns. The first column exists to denote that row's specific hour. The second column allows for text to be entered. This is the primary field for you to organize your day with any notes, meetings, reminders, or anything you might need for an effective schedule. The final column contains a button that will save your description field to local storage. Once data has been saved, it will remain until it is changed and overwritten by another save. This will persist through page reloading as well.
 
+![Gif](workdayscheduler.gif)<br>
 
-## Languages
-
+## Languages and Technology
+- HTML
+- CSS
+- JavaScript
+- JQuery
+- Bootstrap
+- Font Awesome
 
 ## Author
-
+[GitHub](https://github.com/PeterKim89) <br>
+[LinkedIn](www.linkedin.com/in/peter-kim89)   
+[Email]Peter.Kim@uconn.edu
 
 ## License
+[MIT](https://choosealicense.com/licenses/mit/) <br>
+Copyright (c) [2022] [Peter Kim]
