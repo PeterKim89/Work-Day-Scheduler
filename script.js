@@ -1,5 +1,3 @@
-var timeslots = ["#9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-
 // trigger function upon page load
 // creating the actual timer element at the top of the page
 $(document).ready(function () {
@@ -32,7 +30,24 @@ console.log(typeof(moment().get('hour'))); // returns the current hour (24hr for
 // 4PM (9-15 Past, 16-Present, 17 Future)
 // 5PM (9-16 Past, 17-Present)
 // 6PM - 11PM (All Past)
+// target .time-Block class with .past / .present / .future
 
+var timeblockSlots = ["9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm"]; // timeblock ids
+var timeblockSlot24Hour = [9,10,11,12,13,14,15,16,17]; // timeblock slots converted to their 24 hour values
+
+
+function colorCode() {
+    for (i=0; i<timeblockSlots.length; i++) {
+        // if selected timeblock is earlier than current hour, make it past
+        if (timeblockSlot24Hour[i] < moment().get('hour')) {
+            document.getElementById(timeblockSlots[i]).classList.add("past");
+            document.getElementById(timeblockSlots[i]).classList.remove("present");
+            document.getElementById(timeblockSlots[i]).classList.remove("future");
+        }
+    }
+}
+
+colorCode();
 
 //TODO: timeblock color-coding based upon time of day
 //TODO: add color to the Hour / Lock Slots
