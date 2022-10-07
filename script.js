@@ -1,7 +1,7 @@
 var timeslots = ["#9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
-console.log(moment());
 // trigger function upon page load
+// creating the actual timer element at the top of the page
 $(document).ready(function () {
     var timer = document.createElement("h2");
     timer.setAttribute("id", "timer");
@@ -15,59 +15,23 @@ var updateTime = function () {
     var currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
     $("#timer").text(currentTime)
 }
+// initial call to updateTime along with a setInterval to keep the timer pseudo-self updating
 updateTime();
 setInterval(updateTime, 1000);
 
+console.log(typeof(moment().get('hour'))); // returns the current hour (24hr format) as a number value
 
-
-
-
-
-
-
-
-
-// create timeblocks via bootstrap
-// function createTimeblocks () {
-//     for (i=0; i<timeslots.length; i++)
-//     {
-//         // console.log("This is timeslot: " + timeslots[i]);
-//         var timeblockRow = document.createElement("div");
-//         timeblockRow.setAttribute("class", "row");
-//         document.getElementById("timeblock-container").appendChild(timeblockRow);
-
-//         var timeblockHourElement = document.createElement("div");
-//         timeblockHourElement.setAttribute("class", "col-md-2");
-//         timeblockHourElement.setAttribute("class","columnHour");  
-//         timeblockHourElement.setAttribute("class","time-block");
-//         $(".columnHour").addClass("col-2");      
-//         timeblockHour = document.createElement("h2");
-//         timeblockHour.innerText = timeslots[i];
-//         timeblockHourElement.appendChild(timeblockHour);
-//         timeblockRow.appendChild(timeblockHourElement);
-        
-
-//         var timeblockMainElement = document.createElement("div");
-//         timeblockMainElement.setAttribute("class", "col-md-8");
-//         timeblockMainElement.setAttribute("class", "columnMain");
-//         timeblockMain = document.createElement("p");
-//         timeblockMainElement.appendChild(timeblockMain);
-//         timeblockRow.appendChild(timeblockMainElement);
-
-//         var timeblockLockElement = document.createElement("div");
-//         timeblockLockElement.setAttribute("class", "col-md-2");
-//         timeblockLockElement.setAttribute("class","columnLock");
-//         timeblockLock = document.createElement("button");
-//         timeblockLock.setAttribute("type", "button");
-//         timeblockLock.setAttribute("class", "lock-toggle");
-//         timeblockLockElement.appendChild(timeblockLock);  
-//         timeblockRow.appendChild(timeblockLockElement);
-//     }
-//     $(".columnHour").css("padding", "20px");
-//     $(".columnMain").css("background-color","green");
-//     $(".columnLock").css("background-color", "lightblue");
-// }
-// createTimeblocks();
+// 12AM - 8AM (All Future)
+// 9AM (9-Present, 11-5 Future)
+// 10AM (9-Past, 10-Present, 11-17 Future)
+// 11AM (9-10 Past, 11-Present, 12-17 Future)
+// 12PM (9-11 Past, 12-Present, 13-17 Future)
+// 1PM (9-12 Past, 13-Present, 14-17 Future)
+// 2PM (9-13 Past, 14-Present, 15-17 Future)
+// 3PM (9-14 Past, 15-Present, 16-17 Future)
+// 4PM (9-15 Past, 16-Present, 17 Future)
+// 5PM (9-16 Past, 17-Present)
+// 6PM - 11PM (All Past)
 
 
 //TODO: timeblock color-coding based upon time of day
